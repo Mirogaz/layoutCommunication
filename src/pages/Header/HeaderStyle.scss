@@ -9,6 +9,13 @@
     justify-content: end;
 
     &__logo {
+
+        &:hover {
+            cursor: pointer;
+           
+            text-decoration: none;
+        }
+
         display: flex;
         flex-direction: row;
         font-size: 18px;
@@ -22,6 +29,7 @@
         }
 
         &-title {
+            text-decoration: none;
             margin: 20px 0 18px 6px;
         }
     }
@@ -36,6 +44,27 @@
 
         margin-right: 69px;
         &-item {
+            &:hover {
+                cursor: pointer;
+                font-weight: $textWeightHover;
+                
+            }
+
+            &:hover:after {
+                content: "";
+                display: block;
+                bottom: 0;
+                left: 0;
+                width: 32px;
+                
+                margin: 20px auto 0 auto;
+
+                border-bottom: 2px solid;
+                border-image: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+                border-image-slice: 1; 
+            }
+
+            height: 38px;
             margin: 21px 0 22px 30px;
         }
     }
@@ -45,6 +74,11 @@
         margin-right: 50px;
 
         &-name {
+
+            &:hover {
+                cursor: pointer;
+            }
+
             font-size: $textSize;
             font-weight: $textWeight;
             color: $textColor;
@@ -53,6 +87,11 @@
         }
 
         &-logo {
+
+            &:hover {
+                cursor: pointer;
+            }
+
             margin: 14px 0;
         }
 

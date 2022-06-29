@@ -1,0 +1,143 @@
+@import '@/style/MainStyle';
+
+.navigation {
+    font-family: $font-stack;
+    width: 100%;
+    height: 78px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: row;
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        width: 480px;
+
+        margin-left: 50px;
+
+        &-item {
+            font-weight: $textWeight;
+            font-size: 20px;
+            line-height: 24px;
+            width: 190px;
+
+            color: #8E8E8E;
+
+            margin: 27px 15px 0 0;
+
+            &:last-child {
+                margin-left: 15px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $textColor;
+
+                font-weight: 700;
+            }
+
+            &:hover:after {
+                content: " ";
+                display: block;
+                bottom: 0;
+                left: 0;
+                width: 48px;
+                
+                margin: 25px auto 0 auto;
+                
+
+                border-bottom: 2px solid;
+                border-image: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+                border-image-slice: 1; 
+            }
+        }
+    }
+
+    &__date {
+        width: 220px;
+        height: 26px;
+
+        border-bottom: 1px solid #eeeeee;
+        margin: 30px 20px 0 230px;
+        
+
+        &-select {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+
+    }
+
+    &__button {
+        
+        &-date {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            border: 1px solid #F5F5F5;
+            border-radius: 100px;
+
+            margin: 20px 13px 0 0;
+
+            width: 260px;
+            height: 38px;
+            background: #F5F5F5;
+        }
+
+        &-select {
+            border: 1px solid none; 
+            border-radius: 100px;
+            
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+
+            padding: 9px 15px;
+            color: #AEAEAE;
+            cursor: pointer;
+
+            &_active {
+                background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%) fixed;
+                color: white;
+            }
+        }
+
+        margin: 20px 0;
+        
+
+        &-text {
+            font-weight: 600;
+            font-size: $textSize;
+            line-height: 17px;
+
+            padding-left: 7px;
+            padding-top: 2px;
+        }
+
+        &-create {
+            background: $buttonBackground;
+            
+            display: flex;
+            flex-direction: row;
+            
+            color: $buttonColorText;
+            border: 100px;
+            border-radius: 100px;
+
+            width: 137px;
+            height: 38px;
+
+            padding: 8px 24px;
+
+    
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+}
