@@ -1,0 +1,20 @@
+@import '@/style/MainStyle';
+
+.monthList {
+    font-family: $font-stack;
+   
+    &__value {
+        font-weight: 500;
+        font-size: $textSize;
+        line-height: 17px;
+        color: $textColor;
+        margin-right: 28px;
+    }
+
+    &__option {
+        font-family: $font-stack;
+        border: 1px solid #aaa;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
