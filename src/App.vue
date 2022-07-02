@@ -2,6 +2,7 @@
   <div id='app'>
     <Header />
     <Navigation />
+    <CardList />
   </div>
 </template>
 
@@ -9,13 +10,10 @@
 
 import Header from './pages/Header/Header.vue';
 import Navigation from './pages/Navigation/Navigation.vue';
+import CardList from './pages/CardList/CardList.vue';
 
 export default {
-    data() {
-        return {
-        };
-    },
-    components: { Header,Navigation }
+    components: { Header,Navigation,CardList }
 }
 </script>
 

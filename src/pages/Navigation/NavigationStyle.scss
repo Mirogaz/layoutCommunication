@@ -80,6 +80,10 @@
 
         border-bottom: 1px solid #eeeeee;
         margin: 30px 20px 0 573px;
+
+        &-day, &-week {
+            margin-right: 20px;
+        }
         
         &-month {
             margin-right: 10px;
@@ -140,6 +144,8 @@
             width: 260px;
             height: 38px;
             background: #F5F5F5;
+
+    
         }
 
         &-select {

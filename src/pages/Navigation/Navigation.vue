@@ -7,8 +7,8 @@
         </div>
         <div class='navigation__date'>
             <div @click='saveTypeDate' class='navigation__date-select'>
-                <div class='navigation__date-day' v-if="activeClass === 'day'">day</div>
-                <div class='navigation__date-week' v-if="activeClass === 'week'">week</div>
+                <div class='navigation__date-day' v-if="activeClass === 'day'"><input type='date' /></div>
+                <div class='navigation__date-week' v-if="activeClass === 'week'"><input type='date' /></div>
                 <div class='navigation__date-month' v-if="activeClass === 'month'"><MonthList /></div>
                 <SvgSelector id='calendarGradient' /> 
             </div>
