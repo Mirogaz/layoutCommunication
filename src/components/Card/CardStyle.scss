@@ -45,14 +45,17 @@
     }
 
     &__title {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-        color: $textColor;
         
         width: 403px;
 
         margin: 10px 15px;
+
+        &_text {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: $textColor;
+        }
     }
 
     &__user {

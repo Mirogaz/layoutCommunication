@@ -12,7 +12,7 @@
             <span class='card__date-link'>Звонок в ZOOM</span>
         </div>
         <div class='card__title'>
-            Название команды, длинное название события очень длинное название длинное название
+            <p class='card__title_text'>Название команды, длинное название события очень длинное название длинное название</p>
         </div>
         <div class='card__user'>
             <div class='card__user-logo'><img src='@/assets/img/photo.jpg' alt='Картинка' /></div>

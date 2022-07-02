@@ -14,9 +14,9 @@
             </div>
         </div>
         <div class='navigation__button-date'>
-            <div @click='chooseDate' class='navigation__button-select day'>День</div>
-            <div @click='chooseDate' class='navigation__button-select week'>Неделя</div>
-            <div @click='chooseDate' class='navigation__button-select month'>Месяц</div>
+            <div @click='chooseDate' class='navigation__button-select day'><p class='navigation__button-select-name'>День</p></div>
+            <div @click='chooseDate' class='navigation__button-select week'><p class='navigation__button-select-name'>Неделя</p></div>
+            <div @click='chooseDate' class='navigation__button-select month'><p class='navigation__button-select-name'>Месяц</p></div>
         </div>
         <div class='navigation__format'>
             <div @click='choseFormat' class='navigation__format-select'><SvgSelector id='list' /></div>

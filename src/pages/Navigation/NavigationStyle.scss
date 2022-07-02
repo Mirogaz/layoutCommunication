@@ -1,5 +1,6 @@
 @import '@/style/MainStyle';
 
+
 .navigation {
     font-family: $font-stack;
     width: 100%;
@@ -81,8 +82,11 @@
         border-bottom: 1px solid #eeeeee;
         margin: 30px 20px 0 573px;
 
+
+
         &-day, &-week {
             margin-right: 20px;
+            
         }
         
         &-month {
@@ -159,6 +163,11 @@
             padding: 9px 15px;
             color: #AEAEAE;
             cursor: pointer;
+
+            p {
+                margin:0;
+                text-align: center;
+            }
 
             &_active {
                 background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%) fixed;

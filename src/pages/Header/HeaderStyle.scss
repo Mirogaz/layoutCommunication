@@ -22,7 +22,7 @@
         font-weight: $textWeightHover;
         line-height: 22px;
 
-        margin-right: 800px;
+        margin-right: 730px;
 
         &-svg {
             margin-top: 18px;
@@ -42,8 +42,9 @@
         color: $textColor;
         line-height: 17px;
 
-        margin-right: 69px;
+        width: 750px;
         &-item {
+            padding-left: 4px;
             &:hover {
                 cursor: pointer;
                 font-weight: $textWeightHover;
@@ -62,6 +63,18 @@
                 border-bottom: 2px solid;
                 border-image: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
                 border-image-slice: 1; 
+            }
+
+            &:nth-child(2) {
+                width: 175px;
+            }
+
+            &:nth-child(3) {
+                width: 56px;
+            }
+
+            &:nth-child(4) {
+                width: 92px;
             }
 
             height: 38px;
