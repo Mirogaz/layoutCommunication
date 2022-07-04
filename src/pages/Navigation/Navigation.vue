@@ -5,16 +5,16 @@
             <p class='navigation__title-item'>На согласовании</p>
             <p class='navigation__title-item_notification'>12</p>
         </div>
-        <div class='navigation__date'>
-            <div @click='saveTypeDate' class='navigation__date-select'>
-                <div class='navigation__date-day' v-if="activeClass === 'day'"><input type='date' /></div>
-                <div class='navigation__date-week' v-if="activeClass === 'week'"><input type='date' /></div>
-                <div class='navigation__date-month' v-if="activeClass === 'month'"><MonthList /></div>
+        <div @click='getDay' class='navigation__date'>
+            <div class='navigation__date-select'>
+                <div class='navigation__date-day'   v-if="activeClass === 'День'" ><input type='date' /></div>
+                <div class='navigation__date-week'  v-if="activeClass === 'Неделя'" ><input type='date' /></div>
+                <div class='navigation__date-month' v-if="activeClass === 'Месяц'"><MonthList /></div>
                 <SvgSelector id='calendarGradient' /> 
             </div>
         </div>
         <div class='navigation__button-date'>
-            <ButtonGroup @click='chooseDate' :data='dataButton' />
+            <ButtonGroup @dataIndex='getIndex' :data='dataButton' />
         </div>
         <div class='navigation__format'>
             <div @click='choseFormat' class='navigation__format-select'><SvgSelector id='list' /></div>
@@ -39,15 +39,20 @@ export default {
         return {
             activeClass: '',
             dataButton: ['День', 'Неделя', 'Месяц'],
-            count: 1
+            elementIndex: ''
         }
     }, 
    methods: {
-        chooseDate: function() {
-                console.log(this.count)
+        getIndex: function(data) {
+                this.elementIndex = data
             },
-    choseFormat: function() {
-        const btns = Array.from(document.getElementsByClassName("navigation__format-select"));
+        getDay: function() {
+            if(this.elementIndex === 'День') this.activeClass = 'День';
+            else if(this.elementIndex === 'Неделя') this.activeClass = 'Неделя';
+            else this.activeClass = 'Месяц'
+        },
+        choseFormat: function() {
+         const btns = Array.from(document.getElementsByClassName("navigation__format-select"));
             btns.forEach((element) => {
                 element.addEventListener("click", () => {
                     btns.forEach((btn) => btn.classList.remove("navigation__button-select_active"));

@@ -2,7 +2,7 @@
     <div class='group'>
         <div 
             class= 'group__item'
-            @click='[activeClass(index), value(index)]' 
+            @click='[activeClass(index)]' 
             :class='{active: isActive === index}'
             v-for='(item,index) in data' 
             :key='item'
@@ -27,11 +27,8 @@
             activeClass: function(index) {
                 this.currentItem = this.data[index];
                 this.isActive = this.isActive == index ? true : index;
+                this.$emit('dataIndex', this.currentItem);
             },
-            value: function(index) {
-                this.$store.saveDay.isDay = this.data[index];
-                return console.log(this.$store.saveDay.isDay)
-                }
         }
         
     }
