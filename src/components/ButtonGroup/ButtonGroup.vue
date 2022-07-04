@@ -1,3 +1,42 @@
-<template></template>
-<script></script>
-<style></style>
+<template>   
+    <div class='group'>
+        <div 
+            class= 'group__item'
+            @click='[activeClass(index), value(index)]' 
+            :class='{active: isActive === index}'
+            v-for='(item,index) in data' 
+            :key='item'
+        >
+            <p class='group__item-text'>{{ item }}</p>    
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                currentItem: 0,
+                isActive: false
+            }
+        },
+        props: {
+            data: [],
+        },
+        methods: {
+            activeClass: function(index) {
+                this.currentItem = this.data[index];
+                this.isActive = this.isActive == index ? true : index;
+            },
+            value: function(index) {
+                this.$store.saveDay.isDay = this.data[index];
+                return console.log(this.$store.saveDay.isDay)
+                }
+        }
+        
+    }
+</script>
+
+<style lang='scss'>
+    @import 'ButtonGroup.scss';
+</style>    

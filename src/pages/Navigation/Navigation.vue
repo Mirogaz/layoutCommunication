@@ -14,9 +14,7 @@
             </div>
         </div>
         <div class='navigation__button-date'>
-            <div @click='chooseDate' class='navigation__button-select day'><p class='navigation__button-select-name'>День</p></div>
-            <div @click='chooseDate' class='navigation__button-select week'><p class='navigation__button-select-name'>Неделя</p></div>
-            <div @click='chooseDate' class='navigation__button-select month'><p class='navigation__button-select-name'>Месяц</p></div>
+            <ButtonGroup @click='chooseDate' :data='dataButton' />
         </div>
         <div class='navigation__format'>
             <div @click='choseFormat' class='navigation__format-select'><SvgSelector id='list' /></div>
@@ -34,22 +32,19 @@
 <script>
 import SvgSelector from '@/components/SvgSelector/SvgSelector.vue'
 import MonthList from '@/components/MonthList/MonthList.vue';
+import ButtonGroup from '@/components/ButtonGroup/ButtonGroup.vue';
 
 export default {
     data() {
         return {
             activeClass: '',
+            dataButton: ['День', 'Неделя', 'Месяц'],
+            count: 1
         }
     }, 
    methods: {
-    chooseDate: function() {
-        const btns = Array.from(document.getElementsByClassName("navigation__button-select"));
-            btns.forEach((element) => {
-                element.addEventListener("click", () => {
-                    btns.forEach((btn) => btn.classList.remove("navigation__button-select_active"));
-                    element.classList.add("navigation__button-select_active");
-                 });
-              });
+        chooseDate: function() {
+                console.log(this.count)
             },
     choseFormat: function() {
         const btns = Array.from(document.getElementsByClassName("navigation__format-select"));
@@ -78,7 +73,8 @@ export default {
    },
     components: {
         SvgSelector,
-        MonthList
+        MonthList,
+        ButtonGroup
     }
 }
 </script>

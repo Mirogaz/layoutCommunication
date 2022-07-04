@@ -65,6 +65,10 @@
                 border-image-slice: 1; 
             }
 
+            &:first-child {
+                width: 105px;
+            }
+
             &:nth-child(2) {
                 width: 175px;
             }
@@ -112,4 +116,14 @@
         flex-direction: row;
     }
 
+}
+
+@media (max-width: 320px) {
+    .header {
+        &__user {
+            &-name {
+                display: none;
+            }
+        }
+    }
 }

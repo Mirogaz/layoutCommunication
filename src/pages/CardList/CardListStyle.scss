@@ -5,3 +5,17 @@
 
     margin: 20px 0 0 50px;
 }
+
+@media (max-width: 320px) {
+    .list {
+        width: 100%;
+        margin-left: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 450px;
+
+        scrollbar-color: rgba(106, 48, 147, 1) white;
+    }
+
+
+}
