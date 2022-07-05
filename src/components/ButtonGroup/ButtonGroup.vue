@@ -4,7 +4,7 @@
             class= 'group__item'
             @click='[activeClass(index)]' 
             :class='{active: isActive === index}'
-            v-for='(item,index) in data' 
+            v-for='(item,index) in data || text' 
             :key='item'
         >
             <p class='group__item-text'>{{ item }}</p>    
@@ -22,6 +22,9 @@
         },
         props: {
             data: [],
+            text: {
+                type: String
+            }
         },
         methods: {
             activeClass: function(index) {
@@ -35,5 +38,5 @@
 </script>
 
 <style lang='scss'>
-    @import 'ButtonGroup.scss';
+    @import 'ButtonGroupStyle.scss';
 </style>    

@@ -1,0 +1,43 @@
+@import '@/style/MainStyle';
+
+.modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    left: 0;
+
+
+    display: flex;
+    justify-content: end;
+    &__content {
+        
+
+        height: 100%;
+        width: 600px;
+        background-color: #fff;
+
+        animation-name: slideLeft; 
+        animation-duration: 0.5s; 
+
+        &-title {
+            color: $textColor;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+
+            margin: 25px 0 30px 30px;
+        }
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(150%);
+    } 
+    100% {
+        transform: translateX(0%);
+    }
+}
