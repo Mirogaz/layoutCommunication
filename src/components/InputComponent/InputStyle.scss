@@ -3,19 +3,37 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    margin-left: 30px;
     margin-bottom: 25px;
+
 }
     
 
-label.input__label {
+label.label__event, label.label__description {
     display: flex;
     flex-direction: column;
+    margin-left: 30px;
 }
 
-input.input__item {
+input.input__event, input.input__description {
     width: 517px;
     border: 0;
     border-bottom: 1px solid #EEEEEE;
     outline:none;
+}
+
+input.input__radio {
+    display: flex;
+    flex-direction: row;
+}
+
+label.label__radio {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    margin-left: 25px;
+    
+}
+
+.radio__text {
+    margin-left: 7px;
 }

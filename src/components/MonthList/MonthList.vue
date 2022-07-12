@@ -1,8 +1,8 @@
 <template>
     <div class='monthListList'>
         <span class='monthList__value'>{{ optionValue }}</span>
-        <select class='monthList__option'>
-            <option @click='selectValue(optionValue)' class='monthList__option-item' v-for='month in months' :key='month'>{{ month }}</option>
+        <select @change='selectValue($event)' class='monthList__option'>
+            <option class='monthList__option-item' v-for='month in months' :key='month'>{{ month }}</option>
         </select>
     </div>
 </template>
@@ -16,16 +16,11 @@
             }
         },
         methods: {
-            selectValue() {
-                let option = document.getElementsByClassName("monthList__option-item");
-                for (let i = 0; i < option.length; i++) {
-                option[i].addEventListener("click", () => {
-                    this.optionValue = option[i].value;
-                })
+            selectValue(e) {
+                this.optionValue = e.target.value
             }         
         },
         }
-    }
 </script>
 
 <style lang='scss'>

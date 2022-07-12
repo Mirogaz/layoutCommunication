@@ -1,0 +1,48 @@
+@import '@/style/MainStyle';
+
+.btn {
+    &__create {
+        width: 180px;
+        height: 38px;
+        background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+        border: 100px;
+        border-radius: 100px;
+        margin: 0 20px 0 30px;
+        font-size: 14px;
+    }
+
+    &__other {
+        width: 125px;
+        height: 32px;
+        background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 1px solid rgba(106, 48, 147, 1);
+        border-radius: 100px;
+        font-size: 12px;
+        margin-top: 7px;
+    }
+
+    &__close {
+        width: 180px;
+        height: 38px;
+        background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 1px solid rgba(106, 48, 147, 1);
+        border-radius: 100px;
+        font-size: 14px;
+    }
+
+    &__item {
+        color: $buttonColorText;
+
+        font-weight: 600;
+        line-height: 17px;
+
+        &:hover {
+            cursor: pointer
+        }
+        
+    }
+}

@@ -1,15 +1,15 @@
 <template>   
     <div class='btn'>
-        <button>{{ text }}</button>
+        <button class='btn__item' :class='classBtn' :disabled='disabled'>{{ text }}</button>
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            text: {
-                type: String
-            }
+            text: String,
+            classBtn: String,
+            disabled: Boolean
         }
 }
 </script>

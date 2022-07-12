@@ -21,14 +21,15 @@
             <div class='navigation__format-select'><SvgSelector id='calendar' /></div>
         </div>
         <div class='navigation__button'>
-            <button @click="activeModal = true" class='navigation__button-create'>
+            <button @click="openModal" class='navigation__button-create'>
                 <SvgSelector id='plus' />
                 <span class='navigation__button-text'>Создать</span>
             </button>
         </div>
         <div class='navigation__modal' v-if="activeModal">
-            <ModalWindow @close='closeModalWindow' :activeModal='activeModal'/>
+            <ModalWindow @close='closeModalWindow' :activeModal='activeModal' @addCard='nameEvent'/>
         </div>
+        
     </div>
 </template>
 
@@ -45,6 +46,7 @@ export default {
             dataButton: ['День', 'Неделя', 'Месяц'],
             elementIndex: '',
             activeModal: false,
+            getNameEvent: ''
         }
     }, 
    methods: {
@@ -60,13 +62,21 @@ export default {
             if (data === true) {
                 this.activeModal = false;
             }
+        },
+        nameEvent: function(data) {
+            this.getNameEvent = data;
+            this.$emit('addCard', this.getNameEvent)
+        },
+        openModal: function() {
+            this.activeModal = true
+            
         }
     },
     components: {
-    SvgSelector,
-    MonthList,
-    ButtonGroup,
-    ModalWindow
+        SvgSelector,
+        MonthList,
+        ButtonGroup,
+        ModalWindow
 }
 }
 </script>

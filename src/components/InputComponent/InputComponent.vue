@@ -1,17 +1,32 @@
 <template>
     <div class='input'>
-        <label class='input__label'> <p>{{ text }}</p>
-            <input class='input__item'/>
+        <label :class='classLabel'> <p :class='classText'>{{ text }}</p>
+            <input
+                :class='classInput'
+                :type='typeInput' 
+                :value='valueInput' 
+                :name='nameInput'
+                @input="$emit('inputData', $event.target.value)" 
+                class='input__item'/>
         </label>
     </div> 
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            inputData: ''
+        }
+    },
     props: {
-        text:{
-            type: String
-        } 
+        text: String,
+        typeInput: String,
+        valueInput: String,
+        classInput: String,
+        classLabel: String,
+        classText: String,
+        nameInput: String
     }
 }
 </script>

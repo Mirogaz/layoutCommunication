@@ -29,6 +29,48 @@
             line-height: 24px;
 
             margin: 25px 0 30px 30px;
+            
+            &-text {
+                &:nth-last-child(-n+1) {
+                    margin-bottom: 0;   
+                }
+                
+            }
+
+            &:not(:first-child) {
+                font-size: 16px;
+            }
+
+            &:nth-last-child(3n):after {
+                content: 'Cсылка сгенерируется автоматически';
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                color: #AEAEAE;
+                
+            }
+        }
+
+        &-input {
+            &-radio {
+                display: flex;
+                flex-direction: row;
+
+                &_text {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #AEAEAE;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+            }
+        }
+
+        &-button {
+            display: flex;
+            flex-direction: row;
+            margin-top: 60px;
         }
     }
 }
