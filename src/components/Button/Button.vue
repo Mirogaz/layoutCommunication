@@ -1,6 +1,6 @@
 <template>   
     <div class='btn'>
-        <button class='btn__item' :class='classBtn' :disabled='disabled'>{{ text }}</button>
+        <button class='btn__item' :class='classBtn'>{{ text }}</button>
     </div>
 </template>
 
@@ -8,8 +8,7 @@
     export default {
         props: {
             text: String,
-            classBtn: String,
-            disabled: Boolean
+            classBtn: String
         }
 }
 </script>

@@ -5,11 +5,14 @@
                 <p class='modal__content-title-text'>Новое события</p>
             </div>
             <div class='modal__content-input'>
-                <InputComponent @inputData='getNameEvent' text='Название события' classInput='input__event' classLabel='label__event'/>
+                <div class='modal__content-input-title' :class='{reqiuired: requiredActive}'><InputComponent @inputData='getNameEvent' text='Название события' classInput='input__event' classLabel='label__event'/></div>
                 <InputComponent @inputData='getEventDescription' text='Описание события' classInput='input__description' classLabel='label__description'/>
             </div>
             <div class='modal__content-title'>
                 <p class='modal__content-title-text'>Участники</p>
+                <ParticipantsEvent :isShow='show' :users='userData'/>
+                <p class='modal__content-user show' v-if='!hide' @click='expandList'>Показать ещё</p>
+                <p class='modal__content-user show' v-if='hide' @click='hideList'>Скрыть</p>
             </div>
              <div class='modal__content-title'>
                 <p class='modal__content-title-text'>Свободные отрезки времени</p>
@@ -49,7 +52,7 @@
                 <Button text='Другой сервис' classBtn='btn__other' />
             </div>
             <div class='modal__content-button'>
-                <div @click='closeModal(), createEvent()' class='modal__content-button_create'><Button text='Создать' classBtn='btn__create'/></div>
+                <div @click='createEvent' class='modal__content-button_create'><Button text='Создать' classBtn='btn__create'/></div>
                 <div @click='closeModal' class='modal__content-button_close'><Button text='Отменить' classBtn='btn__close' /></div>
             </div>
         </div>
@@ -59,6 +62,7 @@
 <script>
 import Button from '@/components/Button/Button.vue';
 import InputComponent from '@/components/InputComponent/InputComponent.vue';
+import ParticipantsEvent from '@/components/ParticipantsEvent/ParticipantsEvent.vue';
 
 export default {
     data(){
@@ -67,6 +71,10 @@ export default {
             nameEvent: '',
             descriptionEvent: '',
             textValue: '',
+            requiredActive: false,
+            userData: ['Андрей Рыбалкин', 'Константин Павлович', 'Алексей Молонов', 'Илья Копытин', 'Максим Меркулов'],
+            show: false,
+            hide: false
         }
     },
     props: {
@@ -81,18 +89,33 @@ export default {
         },
         getNameEvent: function(data) {
             this.nameEvent = data;
-            console.log(data)
         },
         getEventDescription: function(data) {
             this.descriptionEvent = data;
         },
         createEvent: function() {
-            this.$emit('addCard', this.nameEvent);
+            if(this.nameEvent === '') {
+                this.requiredActive = true
+            }
+            else {
+                this.close = true;
+                this.$emit('close', this.close)
+                this.$emit('addCard', this.nameEvent);
+            }
+        },
+        expandList: function() {
+            this.show = true;
+            this.hide = true;
+        },
+        hideList: function() {
+            this.show = false;
+            this.hide = false;
         }
     },
     components: {
         Button,
-        InputComponent
+        InputComponent,
+        ParticipantsEvent
     }
 }
 </script>

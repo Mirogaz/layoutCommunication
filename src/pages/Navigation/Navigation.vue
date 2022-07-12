@@ -29,7 +29,6 @@
         <div class='navigation__modal' v-if="activeModal">
             <ModalWindow @close='closeModalWindow' :activeModal='activeModal' @addCard='nameEvent'/>
         </div>
-        
     </div>
 </template>
 

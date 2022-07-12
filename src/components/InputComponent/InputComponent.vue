@@ -6,7 +6,7 @@
                 :type='typeInput' 
                 :value='valueInput' 
                 :name='nameInput'
-                @input="$emit('inputData', $event.target.value)" 
+                @input="$emit('inputData', $event.target.value ? $event.target.value : null)" 
                 class='input__item'/>
         </label>
     </div> 

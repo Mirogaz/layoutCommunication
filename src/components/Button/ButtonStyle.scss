@@ -1,6 +1,7 @@
 @import '@/style/MainStyle';
 
 .btn {
+
     &__create {
         width: 180px;
         height: 38px;
@@ -42,6 +43,10 @@
 
         &:hover {
             cursor: pointer
+        }
+
+        &:disabled {
+            background: linear-gradient(94.4deg, #8A868C 0%, #8769A6 100%);
         }
         
     }

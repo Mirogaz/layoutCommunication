@@ -51,7 +51,29 @@
             }
         }
 
+        &-user {
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 15px;
+
+           &-name {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            height: 20px;
+            margin: 8px 0 0 10px;
+           }
+
+        }
+
         &-input {
+
+            &-title {
+                height: 85px;
+                margin-bottom: 20px;
+            }
+
             &-radio {
                 display: flex;
                 flex-direction: row;
@@ -72,6 +94,30 @@
             flex-direction: row;
             margin-top: 60px;
         }
+    }
+}
+
+.reqiuired {
+    &:after {
+        content: 'Это поле должно быть заполнено';
+        color: red;
+        font-size: 10px;
+        margin-left: 30px;
+    }
+}
+
+.show {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    text-decoration-line: underline;
+    background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    &:hover {
+        cursor: pointer;
     }
 }
 
