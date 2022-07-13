@@ -11,6 +11,7 @@
                 8:00 - 8:45
                 </div>
                 <span class='card__date-link'>Звонок в ZOOM</span>
+                <span class='card__delete' @click='deleteCard'>&#10006;</span>
             </div>
             <div class='card__title'>
                 <p class='card__title_text'>{{ title }}</p>
@@ -36,6 +37,12 @@ export default {
     },
     props: {
         title: String,
+        setIdCard: Number
+    },
+    methods: {
+        deleteCard: function() {
+            this.$emit('deleteCard', this.setIdCard);
+        }
     },
     computed: {
         getDate: function() {

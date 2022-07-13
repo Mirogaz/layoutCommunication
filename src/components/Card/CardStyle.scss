@@ -28,7 +28,7 @@
 
         &-link {
             color:#8E8E8E;
-            margin-left: 215px;
+            margin-left: 200px;
             
             &:hover {
                 cursor: pointer;
@@ -56,6 +56,14 @@
             font-size: 12px;
             line-height: 15px;
             color: $textColor;
+        }
+    }
+
+    &__delete {
+        margin-left: 15px;
+        
+        &:hover {
+            cursor: pointer;
         }
     }
 

@@ -16,6 +16,12 @@
             </div>
              <div class='modal__content-title'>
                 <p class='modal__content-title-text'>Свободные отрезки времени</p>
+                <div class='modal__content-button-time'>
+                    <Button text='8:00 - 8:45' classBtn='btn__time'/>
+                    <Button text='9:00 - 9:45' classBtn='btn__time'/>
+                    <Button text='10:00 - 10:45' classBtn='btn__time'/>
+                    <Button text='11:00 - 11:45' classBtn='btn__time'/>
+                </div>
             </div>
              <div class='modal__content-title'>
                 <p class='modal__content-title-text'>Создать ссылку на совещание</p>
@@ -72,7 +78,7 @@ export default {
             descriptionEvent: '',
             textValue: '',
             requiredActive: false,
-            userData: ['Андрей Рыбалкин', 'Константин Павлович', 'Алексей Молонов', 'Илья Копытин', 'Максим Меркулов'],
+            userData: ['Андрей Рыбалкин', 'Константин Павлович', 'Алексей Молонов', 'Илья Копытин', 'Максим Меркулов', 'Максим Красюк'],
             show: false,
             hide: false
         }

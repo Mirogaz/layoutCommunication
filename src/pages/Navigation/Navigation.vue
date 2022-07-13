@@ -36,7 +36,7 @@
 import SvgSelector from '@/components/SvgSelector/SvgSelector.vue'
 import MonthList from '@/components/MonthList/MonthList.vue';
 import ButtonGroup from '@/components/ButtonGroup/ButtonGroup.vue';
-import ModalWindow from '../ModalWindow/ModalWindow.vue';
+import ModalWindow from '@/pages/ModalWindow/ModalWindow.vue';
 
 export default {
     data() {
