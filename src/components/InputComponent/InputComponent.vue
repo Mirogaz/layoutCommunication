@@ -6,7 +6,7 @@
                 :type='typeInput' 
                 :value='valueInput' 
                 :name='nameInput'
-                @input="$emit('inputData', $event.target.value ? $event.target.value : null)" 
+                @input="$emit('inputData', $event.target.value ? $event.target.value : null)"  
                 class='input__item'/>
         </label>
     </div> 
@@ -16,7 +16,6 @@
 export default {
     data() {
         return {
-            inputData: ''
         }
     },
     props: {
@@ -27,6 +26,8 @@ export default {
         classLabel: String,
         classText: String,
         nameInput: String
+    },
+    methods: {
     }
 }
 </script>

@@ -1,8 +1,12 @@
 <template>
     <div class='navigation'>
         <div class='navigation__title'>
-            <p class='navigation__title-item'>Моё расписание</p>
-            <p class='navigation__title-item'>На согласовании</p>
+            <router-link :to="{name:'home'}">
+                <p class='navigation__title-item'>Моё расписание</p>
+            </router-link>
+            <router-link :to="{name:'approval'}">
+                <p class='navigation__title-item'>На согласовании</p>
+            </router-link>
             <p class='navigation__title-item_notification'>12</p>
         </div>
         <div @click='getDay' class='navigation__date'>

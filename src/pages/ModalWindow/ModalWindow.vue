@@ -5,7 +5,7 @@
                 <p class='modal__content-title-text'>Новое события</p>
             </div>
             <div class='modal__content-input'>
-                <div class='modal__content-input-title' :class='{reqiuired: requiredActive}'><InputComponent @inputData='getNameEvent' text='Название события' classInput='input__event' classLabel='label__event'/></div>
+                <div @keyup.enter='createEvent' class='modal__content-input-title' :class='{reqiuired: requiredActive}'><InputComponent @inputData='getNameEvent' text='Название события' classInput='input__event' classLabel='label__event'/></div>
                 <InputComponent @inputData='getEventDescription' text='Описание события' classInput='input__description' classLabel='label__description'/>
             </div>
             <div class='modal__content-title'>
@@ -100,7 +100,7 @@ export default {
             this.descriptionEvent = data;
         },
         createEvent: function() {
-            if(this.nameEvent === '') {
+            if(this.nameEvent === null || this.nameEvent === '') {
                 this.requiredActive = true
             }
             else {

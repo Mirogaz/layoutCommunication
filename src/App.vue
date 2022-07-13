@@ -2,6 +2,7 @@
   <div id='app'>
     <Header />
     <CardList />
+    <router-view />
   </div>
 </template>
 
