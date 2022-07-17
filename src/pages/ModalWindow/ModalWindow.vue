@@ -74,7 +74,7 @@ export default {
     data(){
         return {
             close: false,
-            nameEvent: '',
+            nameEvent: null,
             descriptionEvent: '',
             textValue: '',
             requiredActive: false,
@@ -100,7 +100,7 @@ export default {
             this.descriptionEvent = data;
         },
         createEvent: function() {
-            if(this.nameEvent === null || this.nameEvent === '') {
+            if(this.nameEvent === null) {
                 this.requiredActive = true
             }
             else {

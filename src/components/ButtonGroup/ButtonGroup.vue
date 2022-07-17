@@ -21,10 +21,8 @@
             }
         },
         props: {
-            data: [],
-            text: {
-                type: String
-            }
+            data: Array,
+            text: String
         },
         methods: {
             activeClass: function(index) {

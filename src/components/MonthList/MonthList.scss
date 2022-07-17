@@ -18,3 +18,33 @@
         text-align: center;
     }
 }
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .monthList {
+        &__value {
+            font-size: 11px;
+            margin-right: 4px;
+        }
+
+        &__option {
+            width: 78px;
+            font-size: 11px;
+        }
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .monthList {
+        width: 91px;
+        &__value {
+            font-size: 12px;
+        }
+
+        &__option {
+            width: 90px;
+            font-size: 12px;
+            margin-top: 8px;
+            
+        }
+    }
+}

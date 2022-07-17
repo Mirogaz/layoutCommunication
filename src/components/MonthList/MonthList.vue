@@ -1,5 +1,5 @@
 <template>
-    <div class='monthListList'>
+    <div class='monthList'>
         <span class='monthList__value'>{{ optionValue }}</span>
         <select @change='selectValue($event)' class='monthList__option'>
             <option class='monthList__option-item' v-for='month in months' :key='month'>{{ month }}</option>
