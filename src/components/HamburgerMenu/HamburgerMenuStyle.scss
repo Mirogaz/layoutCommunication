@@ -1,0 +1,48 @@
+.hamburger {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 215px;
+
+    animation: show 1s 1;
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+
+        &-item {
+            font-size: 14px;
+            font-weight: 600;
+            color: #222222;
+            line-height: 17px;
+
+            width: 100%;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+            border-image-slice: 1;
+
+            text-align: center;
+            
+        }
+    }
+}
+
+.menu {
+        &_activation {
+            position: absolute;
+            cursor: pointer;
+    }
+}
+
+@keyframes show{
+    0%{
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+

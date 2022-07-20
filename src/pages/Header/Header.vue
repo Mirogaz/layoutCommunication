@@ -14,6 +14,7 @@
         <div class='header__user'>
             <div class='header__user-name'>Андрей Р.</div>
             <div class='header__user-logo'><img src='@/assets/img/photo.jpg' alt='Картинка' /></div>
+            <div class='header__hamburger-menu'><HamburgerMenu /></div>
         </div>
         
     </div>
@@ -21,15 +22,17 @@
 
 <script>
 import SvgSelector from '@/components/SvgSelector/SvgSelector.vue'
+import HamburgerMenu from '@/components/HamburgerMenu/HamburgerMenu.vue'
 
 export default {
     data() {
         return {
         }
     },
-    components: { 
-        SvgSelector 
-    }
+    components: {
+    SvgSelector,
+    HamburgerMenu
+}
 }
 </script>
 

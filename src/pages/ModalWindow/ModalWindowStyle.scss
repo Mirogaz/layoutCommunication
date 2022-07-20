@@ -145,3 +145,47 @@
         }
     } 
 }
+
+@media (max-width: 479px) and (min-width: 320px) {
+    .modal {
+        &__content {
+
+            &-title {
+                    margin-top: 0;
+
+                    &-text {
+                        margin-top: 10px;
+                    }
+                }
+            
+            &-button {
+                height: 90px;
+                flex-direction: column;
+                margin-top: 10px;
+
+                &-time {
+                    flex-wrap: wrap;
+                    }
+
+                    &_create {
+                        display: flex;
+                        justify-content: center;
+                        margin: 0;
+                    }
+
+                    &_close {
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+
+
+            &-input {
+                &-radio {
+                    flex-wrap: wrap;
+
+                }
+            }
+            }
+        }
+}

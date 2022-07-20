@@ -68,3 +68,19 @@
         }
     }
 }
+
+@media (max-width: 479px) and (min-width: 320px) {
+    .btn {
+        &__time {
+            margin-bottom: 10px;
+        }
+
+        &__create {
+            margin: 0;
+        }
+
+        &__close {
+            margin-top: 10px;
+        }
+    }
+}

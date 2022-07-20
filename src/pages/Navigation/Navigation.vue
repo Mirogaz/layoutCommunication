@@ -2,10 +2,10 @@
     <div class='navigation'>
         <div class='navigation__title'>
             <router-link :to="{name:'home'}">
-                <p class='navigation__title-item'>Моё расписание</p>
+                <p class='navigation__title-item_schedule'>Моё расписание</p>
             </router-link>
             <router-link :to="{name:'approval'}">
-                <p class='navigation__title-item'>На согласовании</p>
+                <p class='navigation__title-item_approval'>На согласовании</p>
             </router-link>
             <p class='navigation__title-item_notification'>12</p>
         </div>
@@ -17,12 +17,14 @@
                 <SvgSelector id='calendarGradient' /> 
             </div>
         </div>
-        <div class='navigation__button-date'>
-            <ButtonGroup @dataIndex='getIndex' :data='dataButton' />
-        </div>
-        <div class='navigation__format'>
-            <div class='navigation__format-select'><SvgSelector id='list' /></div>
-            <div class='navigation__format-select'><SvgSelector id='calendar' /></div>
+        <div class='navigation__parameters'>
+            <div class='navigation__button-date'>
+                <ButtonGroup @dataIndex='getIndex' :data='dataButton' />
+            </div>
+            <div class='navigation__format'>
+                <div class='navigation__format-select'><SvgSelector id='list' /></div>
+                <div class='navigation__format-select'><SvgSelector id='calendar' /></div>
+            </div>
         </div>
         <div class='navigation__button'>
             <button @click="openModal" class='navigation__button-create'>

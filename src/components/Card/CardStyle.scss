@@ -92,35 +92,27 @@
 
 }
 
-
-@media (max-width: 320px) {
+@media (max-width: 479px) and (min-width: 320px) {
     .card {
-        width: 300px;
-        margin-left: 10px;
-        margin-right: 0;
+        width: 95vw;
+        margin: 0;
+        margin-bottom: 10px;
+
         &__date {
-            font-size: 10px;
-
             &-link {
-                margin-left: 110px;
-            }
-
-            }
-
-        &__title {
-            &_text {
-                font-size: 10px;
-                width: 280px;
-                margin-left: 0;
+                margin-left: auto;
+                margin-right: 2%;
             }
         }
 
-        &__user {
-            &-logo {
-                img {
-                  width: 28px;
-                  height: 28px;
-                }
+        &__delete {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        &__title {
+            &_text {
+               width: 90vw;
             }
         }
     }
