@@ -69,6 +69,22 @@
     }
 }
 
+@media (max-width: 767px) and (min-width: 480px) {
+    .btn {
+        &__time {
+            margin-bottom: 10px;
+        }
+
+        &__create {
+            margin: 0;
+        }
+
+        &__close {
+            margin-top: 10px;
+        }
+    }
+}
+
 @media (max-width: 479px) and (min-width: 320px) {
     .btn {
         &__time {

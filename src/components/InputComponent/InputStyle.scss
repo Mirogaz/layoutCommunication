@@ -51,6 +51,12 @@ label.label__radio {
     }
 }
 
+@media (max-width: 767px) and (min-width: 480px) {
+    input.input__event, input.input__description {
+        width: 80vw;
+    }
+}
+
 @media (max-width: 479px) and (min-width: 320px) {
     input.input__event, input.input__description {
         width: 80vw;

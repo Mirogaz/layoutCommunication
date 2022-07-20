@@ -68,6 +68,19 @@
     }
 }
 
+@media (max-width: 767px) and (min-width: 480px) {
+    .group { 
+        width: 220px;
+
+        &__item {
+           &-text {
+            font-size: 14px;
+            padding: 9px 13px;
+           }
+        }
+    }
+}
+
 @media (max-width: 479px) and (min-width: 320px) {
     .group { 
         width: 200px;

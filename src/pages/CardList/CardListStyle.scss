@@ -13,6 +13,18 @@
     }
 }
 
+@media (max-width: 767px) and (min-width: 480px) {
+    .list {
+        &__card {
+            height: 60vh;
+            overflow-y: scroll;
+            overflow-x: hidden;  
+            margin: 0;
+            justify-content: center;
+        }
+    }
+}
+
 @media (max-width: 479px) and (min-width: 320px) {
     .list {
         
