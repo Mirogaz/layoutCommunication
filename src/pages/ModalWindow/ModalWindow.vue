@@ -89,17 +89,17 @@ export default {
         }
     },
     methods: {
-        closeModal: function(){
+        closeModal() {
             this.close = true;
             this.$emit('close', this.close)
         },
-        getNameEvent: function(data) {
+        getNameEvent(data) {
             this.nameEvent = data;
         },
-        getEventDescription: function(data) {
+        getEventDescription(data) {
             this.descriptionEvent = data;
         },
-        createEvent: function() {
+        createEvent() {
             if(this.nameEvent === null) {
                 this.requiredActive = true
             }
@@ -109,11 +109,11 @@ export default {
                 this.$emit('addCard', this.nameEvent);
             }
         },
-        expandList: function() {
+        expandList() {
             this.show = true;
             this.hide = true;
         },
-        hideList: function() {
+        hideList() {
             this.show = false;
             this.hide = false;
         }

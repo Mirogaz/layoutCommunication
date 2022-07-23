@@ -59,6 +59,17 @@
             cursor: pointer
         }
     }
+
+    &__change {
+        color: white;
+        width: 180px;
+        height: 38px;
+        background: linear-gradient(94.4deg, #6A3093 0%, #A044FF 100%);
+        border: 100px;
+        border-radius: 100px;
+        margin: 0;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {

@@ -11,6 +11,7 @@
                 8:00 - 8:45
                 </div>
                 <span class='card__date-link'>Звонок в ZOOM</span>
+                <span class='card__date-edit' @click='editCard'>Редактировать</span>
                 <span class='card__delete' @click='deleteCard'>&#10006;</span>
             </div>
             <div class='card__title'>
@@ -32,7 +33,8 @@
 export default {
     data() {
         return {
-            date: ''
+            date: '',
+            startEdit: false
         }
     },
     props: {
@@ -40,12 +42,18 @@ export default {
         setIdCard: Number
     },
     methods: {
-        deleteCard: function() {
+        deleteCard() {
             this.$emit('deleteCard', this.setIdCard);
-        }
+        },
+        editCard() {
+            this.startEdit = true
+            this.$emit('editCard', this.startEdit)
+            this.$emit('idNewEventCard', this.setIdCard)
+        },
+
     },
     computed: {
-        getDate: function() {
+        getDate() {
             const nowDate = new Date();
             return [...this.date] = `${((nowDate.getDate()) < 10 ? '0' : '')+nowDate.getDate()}.${((nowDate.getMonth()+1) < 10 ? '0' : '') + (nowDate.getMonth()+1)}`
         },

@@ -32,6 +32,9 @@
                 <span class='navigation__button-text'>Создать</span>
             </button>
         </div>
+            <div class='navigation__edit' v-if='openEdit'>
+                <EditCard @closeEdit='closeWindow' @newName='getNewNameEvent'/>
+            </div>
         <div class='navigation__modal' v-if="activeModal">
             <ModalWindow @close='closeModalWindow' :activeModal='activeModal' @addCard='nameEvent'/>
         </div>
@@ -43,6 +46,7 @@ import SvgSelector from '@/components/SvgSelector/SvgSelector.vue'
 import MonthList from '@/components/MonthList/MonthList.vue';
 import ButtonGroup from '@/components/ButtonGroup/ButtonGroup.vue';
 import ModalWindow from '@/pages/ModalWindow/ModalWindow.vue';
+import EditCard from '@/components/EditCard/EditCard.vue'
 
 export default {
     data() {
@@ -51,37 +55,50 @@ export default {
             dataButton: ['День', 'Неделя', 'Месяц'],
             elementIndex: '',
             activeModal: false,
-            getNameEvent: ''
+            getNameEvent: '',
+            activeEdit: false,
+            newNameEvent: ''
         }
     }, 
-   methods: {
-        getIndex: function(data) {
+    props: {
+        openEdit: Boolean
+    },
+    methods: {
+        getIndex(data) {
                 this.elementIndex = data
             },
-        getDay: function() {
+        getDay() {
             if(this.elementIndex === 'День') this.activeClass = 'День';
             else if(this.elementIndex === 'Неделя') this.activeClass = 'Неделя';
             else this.activeClass = 'Месяц'
         },
-        closeModalWindow: function(data) {
-            if (data === true) {
+        closeModalWindow(data) {
+            if (data) {
                 this.activeModal = false;
             }
         },
-        nameEvent: function(data) {
+        nameEvent(data) {
             this.getNameEvent = data;
             this.$emit('addCard', this.getNameEvent)
         },
-        openModal: function() {
+        openModal() {
             this.activeModal = true
             
+        },
+        closeWindow(data) {
+            if(data) this.$emit('closeWindow', this.activeEdit)
+        },
+        getNewNameEvent(data) {
+            if(data) this.newNameEvent = data
+            this.$emit('newNameEvent', this.newNameEvent)
         }
     },
     components: {
         SvgSelector,
         MonthList,
         ButtonGroup,
-        ModalWindow
+        ModalWindow,
+        EditCard
 }
 }
 </script>

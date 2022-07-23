@@ -1,11 +1,13 @@
 <template>
     <div class='list'>
         <div class='list__navigation' >
-            <Navigation @addCard='nameEvent'/>
+            <Navigation @addCard='nameEvent' :openEdit='openWindowEdit' @closeWindow='closeEdit' @newNameEvent='getNewNameEvent'/>
         </div>
         <div class='list__card' v-if="cardList.length > 0" >
             <Card
             @deleteCard='removeCard'
+            @editCard='startEditCard'
+            @idNewEventCard='setNewEventCardId'
             v-for='card in cardList'
             :setIdCard = 'card.id'
             :cardEvent='card' 
@@ -16,8 +18,8 @@
 </template>
 
 <script>
-import Navigation from '@/pages/Navigation/Navigation.vue';
-import Card from '@/components/Card/Card.vue';
+import Navigation from '@/pages/Navigation/Navigation.vue'
+import Card from '@/components/Card/Card.vue'
 
 export default {
     data() {
@@ -28,17 +30,32 @@ export default {
                     name: '',
                     id: ''
                 },
-            idCard: ''
+            idCard: '',
+            openWindowEdit: false,
+            idCardNewEvent: ''
         }
     },
     methods: { 
-        nameEvent: function(data) {
+        nameEvent(data) {
             this.cardList.push({id: Math.floor(Math.random() * 300), name: data})
         },
-        removeCard: function(data) {
+        removeCard(data) {
             this.idCard = data;
             this.cardList = this.cardList.filter(elem => elem.id !== this.idCard)
-
+        },
+        startEditCard(data) {
+            if(data) this.openWindowEdit = true
+        },
+        closeEdit(data) {
+            if(!data) this.openWindowEdit = false
+        },
+        setNewEventCardId(data) {
+            this.idCardNewEvent = data
+        },
+        getNewNameEvent(data) {
+            this.cardList.forEach(elem => {
+                if(elem.id === this.idCardNewEvent) elem.name = data 
+            })
         }
     },
     components: {

@@ -19,6 +19,13 @@ input.input__event, input.input__description {
     outline:none;
 }
 
+input.input__edit {
+    width: 380px;
+    border: 0;
+    border-bottom: 1px solid #EEEEEE;
+    outline:none;
+}
+
 input.input__radio {
     display: flex;
     flex-direction: row;

@@ -14,6 +14,10 @@
         height: 100%;
     }
 
+    &__edit {
+        height: 100%;
+    }
+
     &__parameters {
         display: flex;
         flex-direction: row;
@@ -65,15 +69,6 @@
                     border-image-slice: 1; 
                 }
             }
-
-            &_schedule {
-
-            }
-
-            &_approval {
-
-            }
-
 
             &_notification {
                 font-weight: 600;
@@ -217,7 +212,6 @@
     }
 
 }
-
 
 @media (max-width: 1200px) and (min-width: 992px) {
     .navigation {
