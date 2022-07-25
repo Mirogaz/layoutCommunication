@@ -20,7 +20,7 @@
 <script>
 import Navigation from '@/pages/Navigation/Navigation.vue'
 import Card from '@/components/Card/Card.vue'
-
+import { mapActions } from 'vuex'
 export default {
     data() {
         return {
@@ -34,6 +34,9 @@ export default {
             openWindowEdit: false,
             idCardNewEvent: ''
         }
+    },
+    created() {
+        console.log(this.outputCard())
     },
     methods: { 
         nameEvent(data) {
@@ -56,7 +59,8 @@ export default {
             this.cardList.forEach(elem => {
                 if(elem.id === this.idCardNewEvent) elem.name = data 
             })
-        }
+        },
+        ...mapActions(['outputCard'])
     },
     components: {
         Navigation,
