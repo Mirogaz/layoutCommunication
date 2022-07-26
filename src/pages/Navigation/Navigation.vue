@@ -83,7 +83,6 @@ export default {
         },
         openModal() {
             this.activeModal = true
-            
         },
         closeWindow(data) {
             if(data) this.$emit('closeWindow', this.activeEdit)

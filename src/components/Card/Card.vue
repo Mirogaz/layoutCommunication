@@ -39,7 +39,7 @@ export default {
     },
     props: {
         title: String,
-        setIdCard: Number
+        setIdCard: String
     },
     methods: {
         deleteCard() {

@@ -3,24 +3,26 @@
         <div class='list__navigation' >
             <Navigation @addCard='nameEvent' :openEdit='openWindowEdit' @closeWindow='closeEdit' @newNameEvent='getNewNameEvent'/>
         </div>
-        <div class='list__card' v-if="cardList.length > 0" >
-            <Card
-            @deleteCard='removeCard'
-            @editCard='startEditCard'
-            @idNewEventCard='setNewEventCardId'
-            v-for='card in cardList'
-            :setIdCard = 'card.id'
-            :cardEvent='card' 
-            :key='card.id'
-            :title='card.name' />
-        </div>
+        <div class='loaded' v-if="!isLoaded">Подождите</div>
+            <div class='list__card' v-else-if="items.length > 0" >
+                <Card
+                @deleteCard='removeCard'
+                @editCard='startEditCard'
+                @idNewEventCard='setNewEventCardId'
+                v-for='card in items'
+                :setIdCard = 'card.id'
+                :cardEvent='card' 
+                :key='card.id'
+                :title='card.name' />
+            </div>
     </div>
 </template>
 
 <script>
 import Navigation from '@/pages/Navigation/Navigation.vue'
 import Card from '@/components/Card/Card.vue'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
     data() {
         return {
@@ -30,21 +32,20 @@ export default {
                     name: '',
                     id: ''
                 },
-            idCard: '',
             openWindowEdit: false,
             idCardNewEvent: ''
         }
     },
     created() {
-        console.log(this.outputCard())
+        this.outputCard();
     },
     methods: { 
+        ...mapActions('card', ['outputCard']),
         nameEvent(data) {
-            this.cardList.push({id: Math.floor(Math.random() * 300), name: data})
+            this.$store.dispatch('card/sendCard', {avatar: 'avatar', name: data}, {root: true})
         },
         removeCard(data) {
-            this.idCard = data;
-            this.cardList = this.cardList.filter(elem => elem.id !== this.idCard)
+            this.$store.dispatch('card/removeCard', data, {root: true})
         },
         startEditCard(data) {
             if(data) this.openWindowEdit = true
@@ -59,8 +60,10 @@ export default {
             this.cardList.forEach(elem => {
                 if(elem.id === this.idCardNewEvent) elem.name = data 
             })
-        },
-        ...mapActions(['outputCard'])
+        }
+    },
+    computed: {
+        ...mapGetters('card',['items', 'isLoaded'])
     },
     components: {
         Navigation,
